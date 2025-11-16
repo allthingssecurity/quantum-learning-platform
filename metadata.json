@@ -1,0 +1,5 @@
+{
+  "name": "Quantum Learning Platform",
+  "description": "An interactive in-browser training module for learning quantum computing fundamentals using a simulated Qiskit WASM environment. Features lessons for beginner, intermediate, and advanced users with code execution, visualizations, and AI-powered explanations.",
+  "requestFramePermissions": []
+}

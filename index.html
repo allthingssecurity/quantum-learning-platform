@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* For custom scrollbars */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
+
+      /* For intro slide animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in {
+        animation: fadeIn 0.7s ease-in-out forwards;
+      }
+      
+      @keyframes textReveal {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .text-reveal {
+        animation: textReveal 0.8s ease-out forwards;
+      }
+      .text-reveal-p {
+        animation: textReveal 0.8s 0.2s ease-out forwards;
+        opacity: 0;
+      }
+
+      @keyframes textSlideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-text-slide-up {
+        animation: textSlideUp 0.6s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        opacity: 0;
+      }
+
+      @keyframes contentZoomIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+       .animate-content-zoom-in {
+        animation: contentZoomIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+
+      @keyframes backgroundPan {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .bg-pan-animated {
+        background-size: 200% 200%;
+        animation: backgroundPan 25s ease infinite;
+      }
+      
+      /* For Bloch Sphere Animation */
+      @keyframes rotateSphere {
+        from { transform: rotateY(0deg) rotateX(10deg); }
+        to { transform: rotateY(360deg) rotateX(10deg); }
+      }
+      .sphere-animate {
+        transform-style: preserve-3d;
+        animation: rotateSphere 25s infinite linear;
+      }
+
+      @keyframes pulseVector {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+      .vector-pulse {
+        animation: pulseVector 3s infinite ease-in-out;
+      }
+      
+      /* For animated particle background */
+      @keyframes move-particles {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(-100vw, -100vh); }
+      }
+
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200vw;
+        height: 200vh;
+        background-image:
+          radial-gradient(circle at 1% 1%, #9333ea, transparent 0.5px),
+          radial-gradient(circle at 15% 20%, #38bdf8, transparent 1px),
+          radial-gradient(circle at 30% 80%, #a855f7, transparent 0.5px),
+          radial-gradient(circle at 50% 50%, #22d3ee, transparent 1px),
+          radial-gradient(circle at 75% 10%, #ec4899, transparent 0.5px),
+          radial-gradient(circle at 90% 60%, #6366f1, transparent 1px);
+        animation: move-particles 180s linear infinite;
+        z-index: 0;
+      }
+
+
+      /* For welcome screen background grid */
+      .bg-grid-slate-800\/40 {
+        background-image: linear-gradient(theme(colors.slate.800 / 40%) 1px, transparent 1px), linear-gradient(to right, theme(colors.slate.800 / 40%) 1px, transparent 1px);
+        background-size: 2rem 2rem;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900 text-slate-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
