@@ -36,7 +36,7 @@ const ProbabilityChart: React.FC<{ counts: { [key: string]: number } }> = ({ cou
                         />
                         <Bar dataKey="probability">
                             {data.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                                <Cell key={entry.name} fill={colors[index % colors.length]} />
                             ))}
                         </Bar>
                     </BarChart>
